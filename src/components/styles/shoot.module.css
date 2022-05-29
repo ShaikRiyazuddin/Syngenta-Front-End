@@ -1,64 +1,89 @@
 
 
 .container {
-    width: 100%;
-    height: 100vh;
+    width: 97%;
+    height: 95vh;
+    margin: auto;
+    margin-top:16px;
     display: flex;
-    border: 1px solid black;
     justify-content: space-around;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 .leftContainer{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
 }
 .middleContainer{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
 }
 .rightContainer{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
 }
 .emptyDiv{
-    border: 1px solid black;
     width:80%;
     height: 40%;
     margin:auto;
-    margin-top:40%
+    margin-top:5%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 4%;
+    padding:10px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    border-radius: 5px;
 }
 .circlesDiv{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-radius:5px;
     width:80%;
     height: 90%;
     margin:auto;
     margin-top:5%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     gap: 15px;
+    padding:15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .circle{
     border: 1px solid black;
     border-radius: 50%;
     width:30%;
     height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 .inputsDiv{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-radius: 5px;
     width:80%;
-    height: 40%;
+    height: 30%;
     margin:auto;
-    margin-top:40%;
+    margin-top:5%;
     padding-top: 25%; 
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
-
-
+.assignCircles{
+    border: 1px solid black;
+    border-radius: 50%;
+    width:100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margiN-top:18%;
+}
 
 

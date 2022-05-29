@@ -1,39 +1,60 @@
 import styles from "./styles/shoot.module.css";
 import "./styles/test.css";
-import {useState} from "react"
+import {useState} from "react";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
-const emptyValue = []
+
+
 export const Shoot = () => {
     const [value , setValue] = useState("");
     const [dummy, setDummy] = useState([1,2,3,4,5]);
-    const [triger, setTriger] = useState(1);
- 
-
+    const [emptyValue, setEmptyValue] = useState([])
+    dummy.sort((a,b) => a-b)
     const handleInput = (e) => {
         setValue(e.target.value-1);
     }
-    const handleShoot = () => {
-        let x = dummy;
-        x.splice(value, 1);
-        setDummy(x);
-        setTriger(triger+1);
-
-
-        console.log(dummy.length);
-        if(value > dummy.length){
-            alert("Please enter a value between 1 and 5");
+    const handleShoot = () => { 
+        
+        if(emptyValue.includes(value+1)){
+            alert("You have already shot this number");
         }
-        else{           
-            emptyValue.push(value+1)    
-        }   
+        else{
+            // emptyValue.push(value+1)
+            if(value > 4 || value < 0){
+                alert("You can shoot only in range 1 to 5");
+            }
+            else{
 
+                setEmptyValue([...emptyValue,value+1])
+            }
+        }
+        setDummy(dummy.filter(x => x !== value+1))
     }
-    console.log(emptyValue)
+    const handleReplace = (e) => {
+        // setDummy(e.target.value)
+
+        let value = +e.target.innerHTML;
+        setDummy([...dummy, value]);
+        setEmptyValue(emptyValue.filter(x => x !== value));
+        console.log(dummy)
+    }
+    // console.log(dummy)
 
   return (
     <div className = {styles.container}>
+       
         <div className = {styles.leftContainer}>
-            <div className = {styles.emptyDiv}></div>
+        <h1>Display</h1>
+            <div className = {styles.emptyDiv}>
+                {emptyValue.map(item=>{
+                    return(
+                        <div onClick = {handleReplace} key = {item} className = {styles.assignCircles} id = {`a${item}`}>
+                            {item}
+                        </div>
+                    )
+                })}
+            </div>
         </div>
 
 
@@ -42,7 +63,7 @@ export const Shoot = () => {
             <div className = {styles.circlesDiv}>
                 {dummy.map(item => {
                     return (
-                        <div key = {item} className = {styles.circle} id = {`a${item}`}>
+                        <div  key = {item} className = {styles.circle} id = {`a${item}`}>
                             {item}
                         </div>
                     )
@@ -53,10 +74,12 @@ export const Shoot = () => {
 
 
         <div className = {styles.rightContainer}>
+                <h1>Controls</h1>
                 <div className = {styles.inputsDiv}>
-                    <input onChange = {handleInput}></input>
+                    {/* <input onChange = {handleInput}></input> */}
+                    <TextField style = {{padding:"10px"}}  variant="outlined" onChange = {handleInput} />
                     <br />
-                    <button onClick = {handleShoot}>Shoot</button>
+                    <Button variant = "contained" onClick = {handleShoot}>Shoot</Button>
                 </div>
         </div>
     </div>
