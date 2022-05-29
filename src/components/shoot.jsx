@@ -14,13 +14,13 @@ export const Shoot = () => {
     const handleInput = (e) => {
         setValue(e.target.value-1);
     }
+
+    // Logic to move shot to empty and remove from orginal position
     const handleShoot = () => { 
-        
         if(emptyValue.includes(value+1)){
             alert("You have already shot this number");
         }
         else{
-            // emptyValue.push(value+1)
             if(value > 4 || value < 0){
                 alert("You can shoot only in range 1 to 5");
             }
@@ -31,19 +31,20 @@ export const Shoot = () => {
         }
         setDummy(dummy.filter(x => x !== value+1))
     }
-    const handleReplace = (e) => {
-        // setDummy(e.target.value)
 
+    //Removing colors from empty div
+
+    const handleReplace = (e) => {
         let value = +e.target.innerHTML;
         setDummy([...dummy, value]);
         setEmptyValue(emptyValue.filter(x => x !== value));
         console.log(dummy)
     }
-    // console.log(dummy)
 
   return (
     <div className = {styles.container}>
        
+
         <div className = {styles.leftContainer}>
         <h1>Display</h1>
             <div className = {styles.emptyDiv}>
@@ -56,7 +57,6 @@ export const Shoot = () => {
                 })}
             </div>
         </div>
-
 
 
         <div className = {styles.middleContainer} id = {styles.textID}>
@@ -72,11 +72,9 @@ export const Shoot = () => {
         </div>
 
 
-
         <div className = {styles.rightContainer}>
                 <h1>Controls</h1>
                 <div className = {styles.inputsDiv}>
-                    {/* <input onChange = {handleInput}></input> */}
                     <TextField style = {{padding:"10px"}}  variant="outlined" onChange = {handleInput} />
                     <br />
                     <Button variant = "contained" onClick = {handleShoot}>Shoot</Button>

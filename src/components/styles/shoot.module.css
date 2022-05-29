@@ -1,28 +1,23 @@
-
-
 .container {
-    width: 97%;
-    height: 95vh;
+    width: 90%;
+    height: 85vh;
     margin: auto;
-    margin-top:16px;
+    margin-top:3.5%;
     display: flex;
     justify-content: space-around;
     box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 .leftContainer{
-    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
 }
 .middleContainer{
-    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
 }
 .rightContainer{
-    /* border: 1px solid black; */
     width:30%;
     height: 95%;
     margin:10px;
@@ -40,7 +35,6 @@
     border-radius: 5px;
 }
 .circlesDiv{
-    /* border: 1px solid black; */
     border-radius:5px;
     width:80%;
     height: 90%;
@@ -64,7 +58,6 @@
     color: white;
 }
 .inputsDiv{
-    /* border: 1px solid black; */
     border-radius: 5px;
     width:80%;
     height: 30%;
