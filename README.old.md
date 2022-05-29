@@ -1,1 +1,0 @@
-# Syngenta-Front-End-

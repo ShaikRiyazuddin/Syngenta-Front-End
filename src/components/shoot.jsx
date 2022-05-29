@@ -2,27 +2,33 @@ import styles from "./styles/shoot.module.css";
 import "./styles/test.css";
 import {useState} from "react"
 
-
-
+const emptyValue = []
 export const Shoot = () => {
     const [value , setValue] = useState("");
-    const [dummy, setDummy] = useState([1,2,3,4,5])
-
-
-    const circles = [1,2,3,4,5];
-
-    // const dummyCircles = [...circles];
+    const [dummy, setDummy] = useState([1,2,3,4,5]);
+    const [triger, setTriger] = useState(1);
+ 
 
     const handleInput = (e) => {
-        setValue(e.target.value);
+        setValue(e.target.value-1);
     }
-    console.log(value)
     const handleShoot = () => {
-        const circles = [1,2,3,4,5];
-        circles.filter(circle => circle != value)
-        console.log(circles)
-    }
+        let x = dummy;
+        x.splice(value, 1);
+        setDummy(x);
+        setTriger(triger+1);
 
+
+        console.log(dummy.length);
+        if(value > dummy.length){
+            alert("Please enter a value between 1 and 5");
+        }
+        else{           
+            emptyValue.push(value+1)    
+        }   
+
+    }
+    console.log(emptyValue)
 
   return (
     <div className = {styles.container}>
@@ -37,6 +43,7 @@ export const Shoot = () => {
                 {dummy.map(item => {
                     return (
                         <div key = {item} className = {styles.circle} id = {`a${item}`}>
+                            {item}
                         </div>
                     )
                 })}
