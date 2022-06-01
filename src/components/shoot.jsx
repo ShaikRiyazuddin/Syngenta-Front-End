@@ -47,7 +47,7 @@ export const Shoot = () => {
   return (
     <div className = {styles.container}>
        
-        //Display div where we can see the colors when the color is shot
+        {/* Display div where we can see the colors when the color is shot */}
 
         <div className = {styles.leftContainer}>
         <h1>Display</h1>
@@ -63,7 +63,7 @@ export const Shoot = () => {
         </div>
 
 
-        //Middle div where the colors are intially displayed
+        {/* Middle div where the colors are intially displayed */}
 
         <div className = {styles.middleContainer} id = {styles.textID}>
             <div className = {styles.circlesDiv}>
@@ -77,7 +77,7 @@ export const Shoot = () => {
             </div>
         </div>
 
-        //Controls div where we can enter the number to shoot
+        {/* Controls div where we can enter the number to shoot */}
 
         <div className = {styles.rightContainer}>
                 <h1>Controls</h1>
