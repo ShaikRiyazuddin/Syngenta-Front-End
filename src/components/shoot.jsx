@@ -9,13 +9,16 @@ import TextField from '@mui/material/TextField';
 export const Shoot = () => {
     const [value , setValue] = useState("");
     const [dummy, setDummy] = useState([1,2,3,4,5]);
-    const [emptyValue, setEmptyValue] = useState([])
+    const [emptyValue, setEmptyValue] = useState([]);
+
+    //  Sorting functionality for the arrangement of the colors in the middle div as per there intial positions
+
     dummy.sort((a,b) => a-b)
     const handleInput = (e) => {
         setValue(e.target.value-1);
     }
 
-    // Logic to move shot to empty and remove from orginal position
+    // Logic to move color to empty and remove from orginal position
     const handleShoot = () => { 
         if(emptyValue.includes(value+1)){
             alert("You have already shot this number");
@@ -44,6 +47,7 @@ export const Shoot = () => {
   return (
     <div className = {styles.container}>
        
+        //Display div where we can see the colors when the color is shot
 
         <div className = {styles.leftContainer}>
         <h1>Display</h1>
@@ -59,6 +63,8 @@ export const Shoot = () => {
         </div>
 
 
+        //Middle div where the colors are intially displayed
+
         <div className = {styles.middleContainer} id = {styles.textID}>
             <div className = {styles.circlesDiv}>
                 {dummy.map(item => {
@@ -71,6 +77,7 @@ export const Shoot = () => {
             </div>
         </div>
 
+        //Controls div where we can enter the number to shoot
 
         <div className = {styles.rightContainer}>
                 <h1>Controls</h1>
